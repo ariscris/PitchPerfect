@@ -25,7 +25,7 @@
                                 <rect key="frame" x="147" y="294" width="80" height="80"/>
                                 <state key="normal" image="recordButton"/>
                                 <connections>
-                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MXz-nu-eke"/>
+                                    <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afj-aN-3jr"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press to Record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AJk-BB-eRg">
@@ -38,7 +38,7 @@
                                 <rect key="frame" x="148" y="389" width="80" height="80"/>
                                 <state key="normal" image="stopRecordingButton"/>
                                 <connections>
-                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b9a-gn-68b"/>
+                                    <action selector="stopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8jc-Xu-EV6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -55,11 +55,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="RecordButton" destination="fVI-Fy-CIN" id="VGT-0b-wJC"/>
-                        <outlet property="record" destination="fVI-Fy-CIN" id="yp2-nf-lCH"/>
-                        <outlet property="recordingLabel" destination="AJk-BB-eRg" id="0Yp-Vf-fR4"/>
-                        <outlet property="stopRecording" destination="fVI-Fy-CIN" id="LWj-bK-mDu"/>
-                        <outlet property="stopRecordingButton" destination="slu-AT-Gpf" id="l2n-sX-FEm"/>
+                        <outlet property="recordButton" destination="fVI-Fy-CIN" id="Ixk-pr-3Bg"/>
+                        <outlet property="recordLabel" destination="AJk-BB-eRg" id="Kf5-1m-EpO"/>
+                        <outlet property="stopButton" destination="slu-AT-Gpf" id="w75-DD-GKa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
