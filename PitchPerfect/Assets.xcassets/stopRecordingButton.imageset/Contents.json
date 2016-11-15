@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "pause_80_blue.png",
+      "filename" : "stop2x-iphone.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pause_160_blue.png",
+      "filename" : "stop2x-iphone-1.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "pause_200_blue.png",
+      "filename" : "stop2x-iphone-2.png",
       "scale" : "3x"
     }
   ],
