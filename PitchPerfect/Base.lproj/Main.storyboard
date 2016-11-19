@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -23,7 +24,14 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVI-Fy-CIN">
                                 <rect key="frame" x="137" y="284" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.2562195169849244" green="1" blue="0.87513838596046079" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" image="recordButton"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.maskToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="recordAudio:" destination="BYZ-38-t0r" eventType="touchUpInside" id="afj-aN-3jr"/>
                                 </connections>
@@ -77,7 +85,58 @@
                     <view key="view" contentMode="scaleToFill" id="dwS-bh-TyX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.56163819480917787" green="1" blue="0.94513352844748044" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="FaS-XS-11a">
+                                <rect key="frame" x="16" y="64" width="343" height="603"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gA6-NA-0ae">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="201"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KQe-ip-MCQ" userLabel="Slow Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="201"/>
+                                                <state key="normal" image="slow2x-iphone"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkw-Kq-Oyo" userLabel="Fast Button">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="201"/>
+                                                <state key="normal" image="fast2x-iphone"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="aQH-Y9-sSs">
+                                        <rect key="frame" x="0.0" y="201" width="343" height="201"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="taM-Yn-qYA" userLabel="Chipmunk Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="201"/>
+                                                <state key="normal" image="chipmunk2x-iphone"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmw-Ht-gdH" userLabel="Darth Vader Button">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="201"/>
+                                                <state key="normal" image="darthvader2x-iphone"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-lu-T09">
+                                        <rect key="frame" x="0.0" y="402" width="343" height="201"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hWp-Hu-ydV" userLabel="Echo Button">
+                                                <rect key="frame" x="0.0" y="0.0" width="171.5" height="201"/>
+                                                <state key="normal" image="echo"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LGh-ry-orc" userLabel="Reverb Button">
+                                                <rect key="frame" x="171.5" y="0.0" width="171.5" height="201"/>
+                                                <state key="normal" image="reverb"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="FaS-XS-11a" firstAttribute="top" secondItem="7Eb-Lf-skN" secondAttribute="bottom" id="7CS-o9-fgb"/>
+                            <constraint firstItem="cRp-3M-RY1" firstAttribute="top" secondItem="FaS-XS-11a" secondAttribute="bottom" id="JdD-d0-PIM"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FaS-XS-11a" secondAttribute="trailing" id="Svz-OS-YhL"/>
+                            <constraint firstItem="FaS-XS-11a" firstAttribute="leading" secondItem="dwS-bh-TyX" secondAttribute="leadingMargin" id="UmI-uU-eiF"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5Z-tb-ZBn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -104,7 +163,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chipmunk2x-iphone" width="200" height="200"/>
+        <image name="darthvader2x-iphone" width="200" height="200"/>
+        <image name="echo" width="160" height="160"/>
+        <image name="fast2x-iphone" width="200" height="200"/>
         <image name="recordButton" width="100" height="100"/>
+        <image name="reverb" width="160" height="160"/>
+        <image name="slow2x-iphone" width="200" height="200"/>
         <image name="stopRecordingButton" width="50" height="50"/>
     </resources>
 </document>
