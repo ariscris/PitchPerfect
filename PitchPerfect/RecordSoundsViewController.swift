@@ -17,21 +17,12 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     @IBOutlet weak var recordButton: UIButton!
     @IBOutlet weak var stopButton: UIButton!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    override func viewWillAppear(_ animated: Bool) {
+        stopButton.isEnabled = false
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
+    
     @IBAction func recordAudio(_ sender: Any) {
-        print("got it")
-        recordLabel.text = "Recording in progress"
-        stopButton.isEnabled = true
-        recordButton.isEnabled = false
+        setUIState(isRecording:true, recordLabelText:"Recording in progress")
         
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
         let recordingName = "recordedVoice.wav"
@@ -50,12 +41,18 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     }
     
     @IBAction func stopRecording(_ sender: Any) {
-        recordLabel.text = "Press to Record"
-        stopButton.isEnabled = false
-        recordButton.isEnabled = true
+        setUIState(isRecording:true, recordLabelText:"Press to Record")
         audioRecorder.stop()
         let audioSession = AVAudioSession.sharedInstance()
         try! audioSession.setActive(false)
+        
+    }
+    
+    internal func setUIState(isRecording:Bool, recordLabelText:String)
+    {
+        recordLabel.text = "Recording in progress"
+        stopButton.isEnabled = isRecording
+        recordButton.isEnabled = isRecording
         
     }
     
@@ -75,9 +72,6 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
             playSoundsVC.recordedAudioURL = recordedAudioURL
         }
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        stopButton.isEnabled = false
-    }
+
 }
 
