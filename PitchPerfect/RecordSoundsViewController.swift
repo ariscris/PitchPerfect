@@ -21,6 +21,7 @@ class RecordSoundsViewController: UIViewController, AVAudioRecorderDelegate {
     let recordLabelInProgress = "Recording in progress"
     
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         setUIState(isRecording:false, recordLabelText:recordLabelPressToRecord)
     }
     
